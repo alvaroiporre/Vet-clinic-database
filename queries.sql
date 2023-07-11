@@ -22,3 +22,55 @@ SELECT * FROM animals WHERE name != 'Gabumon';
 
 /*Find all animals with a weight between 10.4kg and 17.3kg (including the animals with the weights that equals precisely 10.4kg or 17.3kg)*/
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
+
+/*Inside a transaction update the animals table by setting the species 
+column to unspecified. Verify that change was made. Then roll back the 
+change and verify that the species columns went back to the state before 
+the transaction.*/
+BEGIN;
+UPDATE animals set species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+
+
+/*Inside a transaction:
+  - Update the animals table by setting the species column to digimon 
+    for all animals that have a name ending in mon.
+  - Update the animals table by setting the species column to pokemon 
+    for all animals that don't have species already set.
+  - Verify that changes were made.
+  - Commit the transaction.
+  - Verify that changes persist after commit.*/
+BEGIN;
+UPDATE animals set species = 'digimon' WHERE name LIKE '%mon';
+UPDATE animals set species = 'pokemon' WHERE species is null;
+SELECT * FROM animals;
+COMMIT;
+
+/*
+Now, take a deep breath and... Inside a transaction delete all records 
+in the animals table, then roll back the transaction.
+After the rollback verify if all records in the animals table still exists. 
+After that, you can start breathing as usual ;)
+*/
+BEGIN;
+DELETE FROM animals;
+SELECT * FROM animals;
+ROLLBACK;
+
+/*
+Inside a transaction:
+  - Delete all animals born after Jan 1st, 2022.
+  - Create a savepoint for the transaction.
+  - Update all animals' weight to be their weight multiplied by -1.
+  - Rollback to the savepoint
+  - Update all animals' weights that are negative to be their weight multiplied by -1.
+  - Commit transaction
+*/
+BEGIN;
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+SAVEPOINT SP1;
+UPDATE animals set weight_kg = weight_kg * -1;
+ROLLBACK TO SP1;
+UPDATE animals set weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+COMMIT;
