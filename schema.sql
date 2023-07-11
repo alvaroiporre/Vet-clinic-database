@@ -6,6 +6,9 @@ CREATE TABLE animals (
 	escape_attempts int,
 	neutered bool,
 	weight_kg real,
-	species varchar(20),
     PRIMARY KEY(id)
 );
+/*
+    Add a new column species
+*/
+ALTER TABLE animals ADD species varchar(20);
