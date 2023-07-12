@@ -56,7 +56,6 @@ ADD CONSTRAINT FK_OWNER FOREIGN KEY(owner_id) REFERENCES owners(id);
 -- name: string
 -- age: integer
 -- date_of_graduation: date
-
 CREATE TABLE vets(
 	id serial not null,
 	name varchar(20),
@@ -65,6 +64,10 @@ CREATE TABLE vets(
 	PRIMARY KEY(id)
 );
 
+-- There is a many-to-many relationship between the tables species and vets: 
+-- a vet can specialize in multiple species, and a species can have multiple 
+-- vets specialized in it. Create a "join table" called specializations 
+-- to handle this relationship.
 CREATE TABLE specializations(
 	id serial not null,
 	id_vet int, 
