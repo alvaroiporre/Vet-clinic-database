@@ -21,12 +21,12 @@ VALUES ('Charmander', '2020-02-08', 0, false, -11 ),
 
 
 /* Insert the following data into the owners table:
-Sam Smith 34 years old.
-Jennifer Orwell 19 years old.
-Bob 45 years old.
-Melody Pond 77 years old.
-Dean Winchester 14 years old.
-Jodie Whittaker 38 years old. */
+    Sam Smith 34 years old.
+    Jennifer Orwell 19 years old.
+    Bob 45 years old.
+    Melody Pond 77 years old.
+    Dean Winchester 14 years old.
+    Jodie Whittaker 38 years old. */
 
 INSERT INTO owners (full_name, age)
 VALUES ('Sam Smith', 34),
@@ -35,3 +35,9 @@ VALUES ('Sam Smith', 34),
 ('Melody Pond', 77),
 ('Dean Winchester', 14),
 ('Jodie Whittaker', 38);
+
+/* Insert the following data into the species table:
+    Pokemon
+    Digimon */
+INSERT INTO species (name)
+VALUES ('Pokemon'), ('Digimon');
