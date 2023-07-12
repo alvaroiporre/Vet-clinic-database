@@ -77,6 +77,10 @@ CREATE TABLE specializations(
 	CONSTRAINT FK_SPECIE FOREIGN KEY (id_specie) REFERENCES species(id)
 );
 
+-- There is a many-to-many relationship between the tables animals and vets: 
+-- an animal can visit multiple vets and one vet can be visited by multiple 
+-- animals. Create a "join table" called visits to handle this relationship, 
+-- it should also keep track of the date of the visit.
 CREATE TABLE visits(
 	id serial not null,
 	id_animal int, 
