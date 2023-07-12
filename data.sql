@@ -48,4 +48,15 @@ VALUES ('Pokemon'), ('Digimon');
 UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
 UPDATE animals SET species_id = 2 WHERE name NOT LIKE '%mon';
 
+/* Modify your inserted animals to include owner information (owner_id):
+    Sam Smith owns Agumon.
+    Jennifer Orwell owns Gabumon and Pikachu.
+    Bob owns Devimon and Plantmon.
+    Melody Pond owns Charmander, Squirtle, and Blossom.
+    Dean Winchester owns Angemon and Boarmon. */
+UPDATE animals SET owner_id = 1 WHERE name in ('Agumon');
+UPDATE animals SET owner_id = 2 WHERE name in ('Gabumon', 'Pikachu');
+UPDATE animals SET owner_id = 3 WHERE name in ('Devimon', 'Plantmon');
+UPDATE animals SET owner_id = 4 WHERE name in ('Charmander', 'Squirtle', 'Blossom');
+UPDATE animals SET owner_id = 5 WHERE name in ('Angemon', 'Boarmon');
 
