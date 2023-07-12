@@ -50,3 +50,36 @@ ALTER TABLE animals
 ADD COLUMN owner_id int;
 ALTER TABLE animals
 ADD CONSTRAINT FK_OWNER FOREIGN KEY(owner_id) REFERENCES owners(id);
+
+-- Create a table named vets with the following columns:
+-- id: integer (set it as autoincremented PRIMARY KEY)
+-- name: string
+-- age: integer
+-- date_of_graduation: date
+
+CREATE TABLE vets(
+	id serial not null,
+	name varchar(20),
+	age int,
+	date_of_graduation date,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE specializations(
+	id serial not null,
+	id_vet int, 
+	id_specie int,
+	PRIMARY KEY (id),
+	CONSTRAINT FK_VET FOREIGN KEY (id_vet) REFERENCES vets(id),
+	CONSTRAINT FK_SPECIE FOREIGN KEY (id_specie) REFERENCES species(id)
+);
+
+CREATE TABLE visits(
+	id serial not null,
+	id_animal int, 
+	id_vet int,
+	visit_date date,
+	PRIMARY KEY (id),
+	CONSTRAINT FK_VET FOREIGN KEY (id_vet) REFERENCES vets(id),
+	CONSTRAINT FK_SPECIE FOREIGN KEY (id_animal) REFERENCES animals(id)
+);
