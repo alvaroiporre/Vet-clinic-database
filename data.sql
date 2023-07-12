@@ -70,3 +70,14 @@ VALUES ('William Tatcher', 45, '2000-04-23'),
 ('Maisy Smith', 26, '2019-01-17'),
 ('Stephanie Mendez', 64, '1981-05-4'),
 ('Jack Harkness', 38, '2008-06-08');
+
+-- Insert the following data for specialties:
+-- Vet William Tatcher is specialized in Pokemon.
+-- Vet Stephanie Mendez is specialized in Digimon and Pokemon.
+-- Vet Jack Harkness is specialized in Digimon.
+INSERT INTO specializations (id_vet, id_specie)
+VALUES (1,1),
+(3,1),
+(3,2),
+(4,2);
+
