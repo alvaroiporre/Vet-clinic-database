@@ -208,3 +208,7 @@ WHERE ve.name = 'Maisy Smith'
 GROUP BY s.name
 ORDER BY visit_count DESC
 LIMIT 1;
+-- The following queries will take to much time
+explain analyze SELECT COUNT(*) FROM visits where id_animal = 4;
+explain analyze SELECT * FROM visits where id_vet = 2;
+explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
