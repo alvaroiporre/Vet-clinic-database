@@ -42,7 +42,7 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [Entity Relation Diagram](#erd)
+    - [Entity Relation Diagram](#ERD)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -91,7 +91,7 @@ After you're finished please remove all the comments and instructions!
 ### Entity Relation Diagram <a name="ERD"></a>
 
 
-- <img src="ERD.png" alt="Diagram"/>
+    <img src="ERD.png" alt="Diagram"/>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
