@@ -159,8 +159,6 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Finish the Database**
-- [ ] **Normalize the Database**
 - [ ] **Add more procedures**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
