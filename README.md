@@ -90,8 +90,7 @@ After you're finished please remove all the comments and instructions!
 
 ### Entity Relation Diagram <a name="ERD"></a>
 
-
-    <img src="ERD.png" alt="Diagram"/>
+  <img src="ERD.png" alt="Diagram"/>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
