@@ -38,3 +38,8 @@ CREATE TABLE invoices (
   payed_at TIMESTAMP,
   medical_history_id INTEGER UNIQUE REFERENCES medical_histories(id)
 );
+
+CREATE INDEX INDEX_FK_medical_history ON medical_history_treatments (medical_history_id);
+CREATE INDEX INDEX_FK_treatment_id ON medical_history_treatments (treatment_id);
+CREATE INDEX INDEX_FK_invoice_id ON invoice_items (invoice_id);
+CREATE INDEX INDEX_FK_treatment_id ON invoice_items (treatment_id);
